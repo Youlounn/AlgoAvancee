@@ -23,20 +23,12 @@ function permute($i,$n,$debut,$str,$fin) {
    if ($i == $n){
 
     $dataText   = $debut.$str.$fin;
-    /*$svgTagId   = 'QRcode_de_gros_batard';
-    $saveToFile = false;
-    $imageWidth = 250;*/
-    echo "<td height='40'>";
+
+    echo "<td>";
        echo "$debut $str $fin";
-       //echo "</br>";
-       //$svgCode = QRcode::svg($dataText, $svgTagId, $saveToFile, QR_ECLEVEL_L, $imageWidth);*/
-       // HTML5 Canvas renderer
-
    $jsCanvasCode = QRcode::canvas($dataText);
-
    // reqired JS rendering lib
    echo '<script type="text/javascript" src="phpqrcode-git-863ffffac4c9d22e522464e325cbcbadfbb26470/lib/js/qrcanvas.js"></script>';
-
    // Canvas and JS code output
    echo $jsCanvasCode;
        //echo $svgCode;
@@ -59,14 +51,10 @@ function swap(&$str,$i,$j) {
     $code1= $_POST['1'];
     $code2= $_POST['2'];
     $code3= $_POST['3'];
-    $code4= $_POST['4'];//echo $code1;echo "</br>";
-    $debut1=substr($code1, 0, 4); //echo $debut1;echo "</br>";
-    $mid1=substr($code1, 4, -4); //echo $mid1;echo "</br>";
-    $fin1=substr($code1, 8);//echo $fin1;echo "</br>";
-    /*$d1 = "1345";
-    $d2 = "2495";
-    $d3 = "9876";
-    $d4 = "4567";*/
+    $code4= $_POST['4'];
+    $debut1=substr($code1, 0, 4);
+    $mid1=substr($code1, 4, -4);
+    $fin1=substr($code1, 8);
 
     echo "<table>";
     //echo "<tr height='40'>".permute($d1,0,strlen($d1))."</tr>";
