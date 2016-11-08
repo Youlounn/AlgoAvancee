@@ -27,6 +27,16 @@ function demandeNumero(){
       #btTab:hover{
         background-color: #76B5C2;
       }
+      #tableau{
+        display: block;
+        border-width: 1px;
+        border-style: solid;
+        margin: 2px;
+        padding:0px;
+        height:500px;
+        width:300px;
+        overflow: auto
+      }
     </style>
   </head>
   <body>
@@ -52,21 +62,22 @@ function demandeNumero(){
     <h2> Voici vos codes </h2>
     </br>
     </br>
-    <table style="widht:100%;">
-      <thead>
-        <tr>
-          <th>Numéro</th>
-          <th>Bouton</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        foreach ($listeCode as $tmp) {
-          echo '<tr><td>'.$tmp.'</td><td><form method="post" action="index.php"><input type="hidden" name="verifValid" value="'.$tmp.'"><input id="btTab" type="submit" name="soumettre" value="Vérification"/></form></td></tr>';
-        }
-        ?>
-      </tbody>
-    </table>
+    <span id="tableau">
+      <table style="widht:100%;">
+        <thead>
+          <tr>
+            <th>Numéro</th>
+            <th>Bouton</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($listeCode as $tmp) {
+            echo '<tr><td>'.$tmp.'</td><td><form method="post" action="index.php"><input type="hidden" name="verifValid" value="'.$tmp.'"><input id="btTab" type="submit" name="soumettre" value="Vérification"/></form></td></tr>';
+          }
+          ?>
+        </tbody>
+      </table>
   <?php
   }
 }
