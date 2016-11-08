@@ -32,6 +32,7 @@ class Modele{
             if($i + $i1 + $i2 + $i3 == $somme){
               $nb = $prefixe.$i.$i1.$i2.$i3.$suffixe;
               array_push($listeCodes,$nb);
+
             }
           }
         }
