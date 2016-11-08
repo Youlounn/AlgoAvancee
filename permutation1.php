@@ -35,14 +35,10 @@ function permute($i,$n,$debut,$str,$fin) {
    $jsCanvasCode = QRcode::canvas($dataText);
 
    // reqired JS rendering lib
-   //bouton check
-   echo'<input type="submit" value="Check">';
-   
    echo '<script type="text/javascript" src="phpqrcode-git-863ffffac4c9d22e522464e325cbcbadfbb26470/lib/js/qrcanvas.js"></script>';
 
    // Canvas and JS code output
    echo $jsCanvasCode;
-
        //echo $svgCode;
        echo "</td>";
      }

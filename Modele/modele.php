@@ -40,4 +40,19 @@ class Modele{
     return $listeCodes;
   }
 
+  function verifNumero($numero){
+    (string) $ret = file_get_contents("https://www.cinemasgaumontpathe.com/index.php?do=reservation_white/ajax/checkNumeroCarte&v=".$numero."&sectionId=136&progId=27217976&nofid=1");
+    $ret1 = utf8_encode($ret);
+
+    //Intérpretation du message reçu
+    $ret = json_decode($ret1);
+    if($ret->{'s'} == 1){
+      $bool = 'valide';
+    }
+    else{
+      $bool = 'pas valide';
+    }
+    return $bool;
+  }
+
 } ?>

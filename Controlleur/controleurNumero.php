@@ -11,7 +11,7 @@ class ControleurNumero{
     $this->modele=new Modele();
   }
 
-  function verifNumero($num){
+  function afficherNumero($num){
     $liste = $this->modele->afficherNumero($num);
     $this->vue->afficherTableau($liste);
   }
