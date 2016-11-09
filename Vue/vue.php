@@ -33,8 +33,8 @@ function demandeNumero(){
         border-style: solid;
         margin: 2px;
         padding:0px;
-        height:500px;
-        width:300px;
+        height: 440px;
+        width: 470px;
         overflow: auto
       }
     </style>
@@ -66,14 +66,18 @@ function demandeNumero(){
       <table style="widht:100%;">
         <thead>
           <tr>
+            <th>Index</th>
             <th>Numéro</th>
+            <th>QRCode</th>
             <th>Bouton</th>
           </tr>
         </thead>
         <tbody>
           <?php
+          $i=0;
           foreach ($listeCode as $tmp) {
-            echo '<tr><td>'.$tmp.'</td><td><form method="post" action="index.php"><input type="hidden" name="verifValid" value="'.$tmp.'"><input id="btTab" type="submit" name="soumettre" value="Vérification"/></form></td></tr>';
+            $i += 1;
+            echo '<tr><td>'.$i.'</td><td>'.$tmp.'</td><td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl='.$tmp.'"></td><td><form method="post" action="index.php"><input type="hidden" name="verifValid" value="'.$tmp.'"><input id="btTab" type="submit" name="soumettre" value="Vérification"/></form></td></tr>';
           }
           ?>
         </tbody>
